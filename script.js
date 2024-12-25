@@ -22,7 +22,16 @@ function findMeal(e){
             resultHeading.innerHTML=`Oops !! no result for meal ${item}`;
         }
         else{
-            alert("There is a meal name");
+            // alert("There is a meal name");
+            mealsEl.innerHTML = data.meals
+            .map((meal) => `<div class="meal">
+                <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+                <div class="meal-info" data-mealId="${meal.idMeal}">
+                    <h3>${meal.strMeal}</h3>
+                </div>
+            </div>`)
+            .join('');
+          
         }
         });
 
