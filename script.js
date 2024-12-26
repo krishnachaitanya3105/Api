@@ -43,3 +43,42 @@ function findMeal(e){
 }
 submit.addEventListener('submit',findMeal);
 
+// const dropdown=document.getElementById("click");
+// dropdown.addEventListener('change',()=>{
+//     if(dropdown.value==="white")
+//     {
+// document.body.style.backgroundColor="white";
+// document.body.style.color="black";
+//     }
+//     else if(dropdown.value==="black")
+//     {
+//         document.body.style.backgroundColor="black";
+//         document.body.style.color="white";
+//     }
+// })
+const icon=document.getElementById("theme-toggle");
+const body=document.body;
+
+    icon.addEventListener("click", () => {
+        // Toggle between lightmode and darkmode
+        body.classList.toggle("lightmode");
+        body.classList.toggle("darkmode");
+    
+        if (body.classList.contains("darkmode")) {
+            icon.classList.remove("far", "fa-sun");
+            icon.classList.add("fa-regular", "fa-moon");
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+        } else {
+            icon.classList.remove("fa-regular", "fa-moon");
+            icon.classList.add("far", "fa-sun");
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+        }
+    });
+
+
+
+
+
+
